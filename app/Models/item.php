@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class explorador extends Model
+class item extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'idade',
+        'explorador_id',
+        'nome',
+        'valor',
         'latitude',
         'longitude',
-        'inventario',
     ];
 }
 
