@@ -16,5 +16,10 @@ class explorador extends Model
         'longitude',
         'inventario',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }
 
