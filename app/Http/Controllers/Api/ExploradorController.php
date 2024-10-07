@@ -81,4 +81,30 @@ class ExploradorController extends Controller
                 'item' => $item,
             ]);
     }
+
+    public function trocarItems(Request $request): JsonResponse
+
+    {
+
+        
+        $explorador1 = explorador::findOrFail($request->explorador1_id);
+        $explorador2 = explorador::findOrFail($request->explorador2_id);
+
+    }
+
+    public function show(Request $request, $id): JsonResponse
+    {
+        $explorador = explorador::with('item')->find($id);
+
+        if (!$explorador) {
+            return response()->json([
+                'message'=> 'Explorador nao encontrado'
+            ]);
+        }
+
+        return response()->json([
+            'explorador' => $explorador,
+            'inventario' => $explorador->items()
+        ]);
+    }
 }
