@@ -16,5 +16,11 @@ class item extends Model
         'latitude',
         'longitude',
     ];
+
+    public function explorador()
+    {
+        return $this->belongsTo(Explorador::class);
+    }
+
 }
 

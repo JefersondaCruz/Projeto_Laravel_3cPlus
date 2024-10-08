@@ -9,6 +9,6 @@ Route::put('/exploradores/{id}', [ExploradorController::class,'update'])->name('
 
 Route::post('/exploradores/{id}/inventario', [ExploradorController::class,'adicionarItem'])->name('adicionarItem.explorador');
 
-Route::post('/exploradores/trocar', [ExploradorController::class,'']);
+Route::post('/exploradores/trocar', [ExploradorController::class,'trocarItems'])->name('trocarItems.explorador');
 
-Route::get('exploradores/{id}', [ExploradorController::class, '']);
+Route::get('exploradores/{id}', [ExploradorController::class, 'show'])->name('mostrar.explorador');

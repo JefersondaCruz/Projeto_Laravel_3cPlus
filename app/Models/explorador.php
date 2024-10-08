@@ -17,9 +17,9 @@ class explorador extends Model
         'inventario',
     ];
 
-    public function items()
+    public function item()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(Item::class, 'explorador_id');
     }
 }
 
